@@ -1,0 +1,16 @@
+version: 2
+
+sources:
+  - name: qwt_src
+    database: qwt_analytics  
+    description: 'raw data for qwt analytics project available in snowflake'
+    schema: raw  
+    tables:
+      - name: products
+      - name: customers
+      - name: employee
+      - name: orders
+      - name: orderdetails
+      - name: offices
+      - name: shipments
+      - name: suppliers
