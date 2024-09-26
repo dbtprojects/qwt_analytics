@@ -2,9 +2,9 @@ version: 2
 
 sources:
   - name: qwt_src
-    database: qwt_analytics  
+    database: "{{env_var('QWT_SOURCEDB', 'QWT_ANALYTICS') }}"
     description: 'raw data for qwt analytics project available in snowflake'
-    schema: raw  
+    schema: "{{env_var('QWT_SOURCESCHEMA', 'RAW') }}" 
     tables:
       - name: products
       - name: customers

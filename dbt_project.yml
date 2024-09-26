@@ -29,10 +29,9 @@ clean-targets:         # directories to be removed by `dbt clean`
   - "dbt_packages"
 
 models:
+  
   dbt_artifacts:
     +schema: AUDITS_LOGS_ANALYSIS
-  staging:
-     +schema: AUDITS_LOGS_ANALYSIS
   dq_tools:
     +schema: DQ
 # +pre-hook:

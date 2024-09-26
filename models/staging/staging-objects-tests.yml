@@ -2,7 +2,7 @@ version: 2
 
 models:
   - name: stg_customers
-    description: this model generates customers master data for the qwt mart
+    description: "{{doc('customers')}}"
     columns:
       - name: customerid
         description: unique customer id for each customer 

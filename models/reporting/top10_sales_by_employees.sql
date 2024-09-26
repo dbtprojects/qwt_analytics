@@ -8,7 +8,7 @@ e.city,
 sum(o.linesalesamount) as sales,
 avg(o.margin) as margin
 
-from salesmart.fct_orders as o inner join salesmart.dim_employees as e
+from {{ ref('fct_orders') }} as o inner join {{ ref('dim_employees') }} as e
 on e.empid = o.employeeid
 
 where e.city = '{{ var('city', "'Paris'") }}' and o.orderyear = 2010

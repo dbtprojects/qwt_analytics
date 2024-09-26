@@ -1,0 +1,19 @@
+version: 2
+
+exposures:
+  - name: top10_sales_by_employees
+    type: dashboard
+    maturity: medium
+    url : https://google.com
+    description: top 10 sales in each city by qwt employees
+
+    depends_on:
+      - ref('fct_orders')
+      - ref('dim_employees')
+
+    owner:
+      name: sv kuamr
+      email: connect@datadarwin.io
+
+    
+
