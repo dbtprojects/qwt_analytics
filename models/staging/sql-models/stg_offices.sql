@@ -1,4 +1,4 @@
-{{ config(materialized = 'table', schema = env_var('QWT_SOURCESCHEMA', 'STAGING'))}}
+{{ config(materialized = 'table', schema = env_var('DBT_SOURCESCHEMA', 'STAGING'))}}
 
 select 
 office as officeid,
