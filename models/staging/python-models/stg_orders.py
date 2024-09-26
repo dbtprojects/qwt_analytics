@@ -1,7 +1,8 @@
 import snowflake.snowpark.functions as F
 
 def model(dbt, session):
-    dbt.config(materialized = "incremental")
+    
+    dbt.config(schema = "test")
     df = dbt.source("qwt_src", "orders")
 
     if dbt.is_incremental:
