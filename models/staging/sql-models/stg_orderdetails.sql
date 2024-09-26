@@ -1,4 +1,4 @@
-{{ config(materialized = 'incremental', unique_key = ['OrderID', 'Lineno'], schema = env_var('QWT_SOURCESCHEMA', 'STAGING') ) }}
+{{ config(materialized = 'incremental', unique_key = ['OrderID', 'Lineno'], schema = env_var('DBT_SOURCESCHEMA', 'STAGING') ) }}
 
 select 
 
