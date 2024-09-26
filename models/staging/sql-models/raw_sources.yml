@@ -4,7 +4,7 @@ sources:
   - name: qwt_src
     database: "{{env_var('DBT_SOURCEDB', 'QWT_ANALYTICS') }}"
     description: 'raw data for qwt analytics project available in snowflake'
-    schema: "{{env_var('DBT_SOURCESCHEMA', 'RAW') }}" 
+    schema: "{{env_var('DBT_RAWSCHEMA', 'RAW') }}" 
     tables:
       - name: products
       - name: customers
