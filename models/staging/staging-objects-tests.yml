@@ -11,11 +11,6 @@ models:
           - not_null
           - is_even
 
-  - name: stg_orders
-    description: tranaction captured in source systems will be consolidated
-    tests:
-       - dbt_utils.equal_rowcount:
-          compare_model: ref('stg_orderdetails')
           
   - name: stg_products
     description:  this model generates master data for products

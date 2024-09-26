@@ -1,0 +1,7 @@
+version: 2
+
+models:
+  - name: stg_orders
+    config:
+      materialized: incremental
+      specific_env_var: "{{ env_var('DBT_SOURCESCHEMA', 'TEST') }}"
