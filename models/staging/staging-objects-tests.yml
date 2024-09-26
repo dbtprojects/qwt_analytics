@@ -1,0 +1,59 @@
+version: 2
+
+models:
+  - name: stg_customers
+    description: "{{doc('customers')}}"
+    columns:
+      - name: customerid
+        description: unique customer id for each customer 
+        tests:
+          - unique
+          - not_null
+          - is_even
+
+  - name: stg_orders
+    description: tranaction captured in source systems will be consolidated
+    tests:
+       - dbt_utils.equal_rowcount:
+          compare_model: ref('stg_orderdetails')
+          
+  - name: stg_products
+    description:  this model generates master data for products
+    columns:
+      - name: productid
+        description: unique product id for each product
+        tests:
+          - unique
+          - not_null
+  
+  - name: stg_shipments
+    description: shipments data captured by shippers
+    columns:
+      - name: orderid
+        description: unique shipment data for each order
+        tests:
+          - unique
+          - not_null
+      - name: status
+        description: shipment status for the delivery of the order
+        tests:
+          - accepted_values:
+              values: ['ordered', 'shipped', 'returned']
+
+  - name: stg_orderdetails
+    description: detailed transaction data for each order
+    columns:
+      - name: orderid
+        description: unique orderid will be taken from the orders table
+        tests:
+          - relationships:
+              field: orderid
+              to: ref('stg_orders')
+
+  - name: stg_employees
+    description: master data of all employees who executed orders
+    columns:
+      - name: empid
+        description: unique employee id given to employees by organization
+        tests:
+          - is_even

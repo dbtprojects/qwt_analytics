@@ -1,0 +1,10 @@
+packages:
+  - package: calogica/dbt_date
+    version: 0.10.1
+  - package: brooklyn-data/dbt_artifacts
+    version: 2.6.4
+  - package: infinitelambda/dq_tools
+    version: 1.4.2
+  - package: dbt-labs/dbt_utils
+    version: 1.3.0
+sha1_hash: 2713308e0494cdb0836dfa3b850634ecebd011e7
